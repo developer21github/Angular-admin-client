@@ -1,0 +1,75 @@
+<section class="content-header">
+    <h1>
+        Testimonial
+        <small>customer reviews</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#" ui-sref="app.dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Testimonial</li>
+    </ol>
+</section>
+
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Testimonial</h3>
+                    <button class="btn btn-primary pull-right" ui-sref="app.testimonialManage" value="Add Testimonial">
+                        <span class="fa fa-plus"></span> Add Testimonial
+                    </button>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+                        <div class="row">
+                            <div class="col-sm-6"></div>
+                            <div class="col-sm-6"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="table-responsive" ng-if="!vm.userTable">
+                                    <table datatable="ng" dt-options="vm.dtOptionsEvent"
+                                           dt-column-defs="vm.dtColumnDefsEvent"
+                                           class="table table-bordered table-striped dataTable">
+                                        <thead>
+                                        <tr>
+                                            <th>Profile</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Contact</th>
+                                            <th>Testimonial</th>
+                                            <th>Action</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr ng-repeat="testm in vm.testimonail">
+                                            <td><img ng-src="{{testm.file}}" class="img-rounded"></td>
+                                            <td>{{testm.name}}</td>
+                                            <td>{{testm.email}}</td>
+                                            <td>{{testm.phoneNo}}</td>
+                                            <td>{{testm.testimonail}}</td>
+                                            <td><a href="" class="btn" title="Edit"
+                                                   ng-click="vm.updateTestimonialForm(testm._id)">
+                                                <span class="fa fa-edit"></span></a>
+                                                <a href="" title="Delete" class="btn"
+                                                   ng-click="vm.deleteTestimonial(testm._id,$index)">
+                                                    <span style="color:#ac2925;" class="fa fa-trash"></span></a></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+            <!-- /.box -->
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
