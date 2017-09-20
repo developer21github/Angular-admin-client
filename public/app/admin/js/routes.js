@@ -38,6 +38,19 @@
                 controller:'testimonialController',
                 controllerAs:'vm'
             })
+            .state('app.portfolioIndex',{
+                url:'/portfolio/index',
+                templateUrl:'public/app/admin/app/portfolio/index.html',
+                controller:'portfolioController',
+                controllerAs:'vm'
+
+            })
+            .state('app.portfolioManage',{
+                url:'/portfolio/manage/:id',
+                templateUrl:"public/app/admin/app/portfolio/manage.html",
+                controller:'portfolioController',
+                controllerAs:'vm'
+            })
             .state('app.inventory', {
                 abstract: true,
                 url: '/inventory',

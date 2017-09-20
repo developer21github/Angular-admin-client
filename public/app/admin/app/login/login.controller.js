@@ -12,11 +12,13 @@
         function login(data) {
             debugger;
             loginService.login(data).then(function (responce) {
+                debugger
                 if(responce.status==200)
                  $state.go('app.dashboard');
                 else
                     toastr.success(responce.data.message)
             },function (error) {
+                debugger
                 toastr.error(error.data.message)
             })
 

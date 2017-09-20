@@ -12,8 +12,10 @@
         return service;
 
         function login(data) {
-            return $http.post({url:webservice.api + '/auth/login',
-                data:data});
+            return $http.post({
+                url: webservice.api + '/auth/login',
+                data: data
+            });
         }
     }
 

@@ -20,7 +20,7 @@
       Author URL: https://bootstrapmade.com
   ======================================================= -->
 </head>
-<body>
+<body ng-controller="appCtrl as vm">
 
 <div class="loader"></div>
 <div id="myDiv">
@@ -169,58 +169,15 @@
           <p class="sub-title pad-bt15">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br>tempor incididunt ut labore et dolore magna aliqua.</p>
           <hr class="bottom-line">
         </div>
-        <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
+        <div ng-repeat="portF in vm.portfolio" class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
           <figure>
-            <img src="public/app/client/img/port01.jpg" class="img-responsive">
+            <a href="{{portF.link}}" target="_blank">
+            <img ng-src="{{portF.file}}" class="img-responsive">
             <figcaption>
-              <h2>Project For Everyone</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nost.</p>
+              <h2>{{portF.title}}</h2>
+              <p>{{portF.discription}}</p>
             </figcaption>
-          </figure>
-        </div>
-        <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
-          <figure>
-            <img src="public/app/client/img/port02.jpg" class="img-responsive">
-            <figcaption>
-              <h2>Project For Everyone</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nost.</p>
-            </figcaption>
-          </figure>
-        </div>
-        <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
-          <figure>
-            <img src="public/app/client/img/port03.jpg" class="img-responsive">
-            <figcaption>
-              <h2>Project For Everyone</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nost.</p>
-            </figcaption>
-          </figure>
-        </div>
-        <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
-          <figure>
-            <img src="public/app/client/img/port04.jpg" class="img-responsive">
-            <figcaption>
-              <h2>Project For Everyone</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nost.</p>
-            </figcaption>
-          </figure>
-        </div>
-        <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
-          <figure>
-            <img src="public/app/client/img/port05.jpg" class="img-responsive">
-            <figcaption>
-              <h2>Project For Everyone</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nost.</p>
-            </figcaption>
-          </figure>
-        </div>
-        <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
-          <figure>
-            <img src="public/app/client/img/port06.jpg" class="img-responsive">
-            <figcaption>
-              <h2>Project For Everyone</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nost.</p>
-            </figcaption>
+            </a>
           </figure>
         </div>
       </div>
@@ -422,8 +379,8 @@
 <script src="public/bower_components/angular/angular.min.js"></script>
 <script src="public/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 <script src="public/bower_components/oclazyload/dist/ocLazyLoad.min.js"></script>
+
 <script src="public/app/client/js/app.js"></script>
-
-
+<script src="public/app/client/js/app.controller.js"></script>
 </body>
 </html>

@@ -1,11 +1,11 @@
 <section class="content-header">
     <h1>
-        Testimonial
+        Portfolio
         <small>customer reviews</small>
     </h1>
     <ol class="breadcrumb">
         <li><a href="#" ui-sref="app.dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Testimonial</li>
+        <li class="active">Portfolio</li>
     </ol>
 </section>
 
@@ -14,9 +14,9 @@
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Testimonial</h3>
-                    <button class="btn btn-primary pull-right" ui-sref="app.testimonialManage" value="Add Testimonial">
-                        <span class="fa fa-plus"></span> Add Testimonial
+                    <h3 class="box-title">Portfolio</h3>
+                    <button class="btn btn-primary pull-right" ui-sref="app.portfolioManage" value="Add Portfolio">
+                        <span class="fa fa-plus"></span> Add Portfolio
                     </button>
                 </div>
                 <!-- /.box-header -->
@@ -29,31 +29,29 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="table-responsive" ng-if="!vm.userTable">
-                                    <table datatable="ng" dt-options="vm.dtOptionsEvent"
+                                    <table datatable="ng" dt-options="vm.dtOptionsEvent "
                                            dt-column-defs="vm.dtColumnDefsEvent"
                                            class="table table-bordered table-striped dataTable">
                                         <thead>
                                         <tr>
                                             <th>Profile</th>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Contact</th>
-                                            <th>Testimonial</th>
+                                            <th>Title</th>
+                                            <th>Discretion</th>
+                                            <th>IsShow</th>
                                             <th>Action</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr ng-repeat="testm in vm.testimonail">
-                                            <td><img ng-src="{{testm.file}}" class="img-rounded"></td>
-                                            <td>{{testm.name}}</td>
-                                            <td>{{testm.email}}</td>
-                                            <td>{{testm.phoneNo}}</td>
-                                            <td>{{testm.testimonial}}</td>
+                                        <tr ng-repeat="portf in vm.portfolio.data">
+                                            <td><img ng-src="{{portf.file}}" class="img-rounded" width="100" height="100"></td>
+                                            <td>{{portf.title}}</td>
+                                            <td>{{portf.discription}}</td>
+                                            <td>{{portf.isShow}}</td>
                                             <td><a href="" class="btn" title="Edit"
-                                                   ng-click="vm.updateTestimonialForm(testm._id)">
+                                                   ng-click="vm.updatePortfolioForm(portf._id)">
                                                 <span class="fa fa-edit"></span></a>
                                                 <a href="" title="Delete" class="btn"
-                                                   ng-click="vm.deleteTestimonial(testm._id,$index)">
+                                                   ng-click="vm.deletePortfolio(portf._id,$index)">
                                                     <span style="color:#ac2925;" class="fa fa-trash"></span></a></td>
                                         </tr>
                                         </tbody>

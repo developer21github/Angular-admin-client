@@ -2,8 +2,9 @@
     'use strict';
     angular.module('app')
         .controller('testimonialController', testimonialController);
+
     /** @injector */
-    function testimonialController(Upload, toastr, $state, $http, $window, bootBoxService, testimonialService, $stateParams) {
+    function testimonialController(toastr, $state, bootBoxService, testimonialService, $stateParams) {
         var vm = this;
         vm.addTestimonial = addTestimonial;
         vm.getAllTestimonial = getAllTestimonial;
@@ -46,7 +47,6 @@
                         toastr.error(error.data.message);
                     })
             }else{
-
                 testimonialService.addTestimonial(file)
                     .then(function (response) {
                         if (response.status === 200) { //validate success
